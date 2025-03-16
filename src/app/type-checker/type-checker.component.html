@@ -1,0 +1,21 @@
+<div class="container box has-text-centered">
+  <h2 class="title is-5">Type Checker</h2>
+
+  <div class="block">
+    <span
+      [class]="onChange(letter, enteredText[i])"
+      *ngFor="let letter of randomText.split(''); let i = index"
+      >{{ letter }}</span
+    >
+  </div>
+
+  <div>
+    <label class="subtitle is-6"
+      ><em>Type here: </em><input (input)="onInput($event)"
+    /></label>
+  </div>
+
+  <div class="mt-5 has-text-success has-text-weight-bold is-size-4">
+    <p>{{ onComplete() }}</p>
+  </div>
+</div>

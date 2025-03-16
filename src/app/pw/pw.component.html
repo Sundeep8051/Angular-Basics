@@ -1,0 +1,36 @@
+<div class="box">
+  <h2 class="title">{{ title }}</h2>
+  <div class="block">
+    <p class="title is-6">
+      Enter Length:
+      <input type="number" (input)="onChangeLength($event)" />
+    </p>
+  </div>
+  <div class="checkboxes block">
+    <label class="checkbox"
+      >Use Number: <input (click)="areNumbersUsed()" type="checkbox"
+    /></label>
+
+    <label class="checkbox"
+      >Use Words: <input (click)="areWordsUsed()" type="checkbox"
+    /></label>
+
+    <label class="checkbox"
+      >Use Symbols: <input (click)="areSymbolsUsed()" type="checkbox"
+    /></label>
+  </div>
+  <div>
+    <button
+      [disabled]="!enableButton()"
+      (click)="generatePassword()"
+      class="button is-primary"
+    >
+      Generate
+    </button>
+  </div>
+  <div class="mt-2 title is-6" *ngIf="password">
+    <label>Password: <input type="text" [value]="password" /></label>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
